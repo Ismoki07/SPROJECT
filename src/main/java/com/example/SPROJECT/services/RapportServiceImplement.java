@@ -20,6 +20,11 @@ public class RapportServiceImplement implements RapportService {
     }
 
     @Override
+    public Rapport getRapport(Long id) {
+        return rapportRepository.findById(id).orElse(null);
+    }
+
+    @Override
     public void deleteRapport(Rapport rapport) {
         rapportRepository.delete(rapport);
     }

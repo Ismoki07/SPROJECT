@@ -19,12 +19,18 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+    @GetMapping("/{id}")
+    @ResponseBody
+    public User getUser(@PathVariable("id") Long userId) {
+        return userService.getUser(userId);
+    }
 
     @PostMapping("/create")
     @ResponseBody
     public User createUser(@RequestBody User user) {
         return userService.addUser(user);
     }
+
 
     @DeleteMapping("/delete/{id}")
     @ResponseBody

@@ -19,6 +19,11 @@ public class RapportController {
     public List<Rapport> getAllRapports() {
         return rapportService.getAllRapports();
     }
+    @GetMapping("/{id}")
+    @ResponseBody
+    public Rapport getRapport(@PathVariable ("id") Long rapportId) {
+        return rapportService.getRapport(rapportId);
+    }
 
     @PostMapping("/create")
     @ResponseBody
